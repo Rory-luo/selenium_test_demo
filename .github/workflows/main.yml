@@ -9,8 +9,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-      	ref: Selnium
+      with:  
+        ref: Selenium
 
     - name: Set up Python
       uses: actions/setup-python@v2
