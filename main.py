@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+import logging
 
 # 初始化Chrome浏览器
 chrome_options = webdriver.ChromeOptions()
@@ -25,6 +26,8 @@ all_text_elements = browser.find_elements(By.XPATH, "//body//text()")
 # 输出文字内容
 for element in all_text_elements:
     print(element.text)
+
+logging.basicConfig(level=logging.INFO)
 
 # 关闭浏览器
 browser.quit()
