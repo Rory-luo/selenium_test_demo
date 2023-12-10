@@ -7,8 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")  # 无头模式，不弹出浏览器窗口
 
-# 使用WebDriverManager来自动下载并获取ChromeDriver路径
-chrome_driver_path = ChromeDriverManager().install()
+# 使用WebDriverManager来自动下载并获取ChromeDriver路径，指定版本
+chrome_driver_path = ChromeDriverManager(version="94.0.4606.61").install()
 chrome_service = ChromeService(chrome_driver_path)
 browser = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
@@ -28,4 +28,3 @@ for element in all_text_elements:
 
 # 关闭浏览器
 browser.quit()
-
